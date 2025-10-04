@@ -19,7 +19,7 @@ class BankAccount {
             throw new LowBalanceException("Withdrawal failed: Insufficient balance!");
         }
         balance -= amount;
-        System.out.println("Withdrawal successful! Remaining balance: ₹" + balance);
+        System.out.println("Withdrawal successful! Remaining balance: " + balance);
     }
 
     public double getBalance() {
@@ -33,7 +33,7 @@ public class BankApp {
         BankAccount account = new BankAccount(5000); // Initial balance ₹5000
 
         try {
-            System.out.println("Attempting to withdraw ₹6000...");
+            System.out.println("Attempting to withdraw 6000...");
             account.withdraw(6000); // Trying to withdraw more than balance
         } catch (LowBalanceException e) {
             System.out.println(e.getMessage());
@@ -42,7 +42,7 @@ public class BankApp {
         }
 
         try {
-            System.out.println("\nAttempting to withdraw ₹3000...");
+            System.out.println("\nAttempting to withdraw 3000...");
             account.withdraw(3000); // Successful withdrawal
         } catch (LowBalanceException e) {
             System.out.println(e.getMessage());
@@ -51,3 +51,4 @@ public class BankApp {
         }
     }
 }
+
